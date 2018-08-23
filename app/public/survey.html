@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+
+    <title>FriendFinder - Survey</title>
+</head>
+
+<body>
+    <!-- This is the master div -->
+    <div class="container">
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Friend Finder - The Survey</h1>
+                <p class="lead">Fill out this survey to find someone compatible with you.</p>
+                <br>
+                <p>1 - Strongly Disagree</p>
+                <br>
+                <p>5 - Strongly Agree</p>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Your Name</span>
+            </div>
+            <input type="text" class="form-control" id="yourName">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Link to your photo</span>
+            </div>
+            <input type="text" class="form-control" id="yourPic">
+        </div>
+
+        <!-- Question 1 -->
+        <h3>Question 1</h3>
+        <p>You prefer going out and being with lots of people over staying in at home.</p>
+        <select id="q1">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <br>
+
+
+        <!-- Question 2 -->
+        <h3>Question 2</h3>
+        <p>If you come across something you are unfamiliar with, you try to learn about it rather than move on and accept it
+            as something you do not understand.</p>
+        <select id="q2">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 3 -->
+        <h3>Question 3</h3>
+        <p>When you are wrong in an argument, you continue to argue your point in order to have a "win"</p>
+        <select id="q3">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 4 -->
+        <h3>Question 4</h3>
+        <p>You would rather blend in to a crowd than be life of the party.</p>
+        <select id="q4">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 5 -->
+        <h3>Question 5</h3>
+        <p>You think more about the future than living in the present.</p>
+        <select id="q5">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 6 -->
+        <h3>Question 6</h3>
+        <p>Friends and Family are the most important things in your life.</p>
+        <select id="q6">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 7 -->
+        <h3>Question 7</h3>
+        <p>At a restaurant, you like to try something new rather than something you know is good.</p>
+        <select id="q7">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 8 -->
+        <h3>Question 8</h3>
+        <p>You have a hard time identifying with other people.</p>
+        <select id="q8">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 9 -->
+        <h3>Question 9</h3>
+        <p>Hot sauce is a must have at your home.</p>
+        <select id="q9">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Question 10 -->
+        <h3>Question 10</h3>
+        <p>If you find a good TV show, chances are you will binge all available episodes.</p>
+        <select id="q10">
+            <option value="" disabled selected>Select your option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
+        <br>
+        <br>
+
+        <!-- End of master div -->
+    </div>
+
+    <p>Your best friend:</p>
+    <h2 id="bestFriend"></h2>
+    <img id="bestFriendPhoto" src="#">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+<script type="text/javascript">
+
+
+
+    $("#submitBtn").on("click", function () {
+        event.preventDefault();
+        var newFriend = {
+            name: $("#yourName").val().trim(),
+            photo: $("#yourPic").val().trim(),
+            scores: [
+                $("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim()
+            ]
+        };
+
+        console.log(newFriend);
+        var newFriendScores = newFriend.scores.map(v => parseInt(v, 10));
+
+        $.post("/api/friends", newFriend),
+            function (data) {
+                $("#yourName").text(data.name);
+                $("#yourPic").attr("src", data.photo);
+                // $("#myModal").text(data.name);
+                $("#bestFriend").text(data.name);
+				$("#bestFriendPhoto").attr("src", data.photo);
+            };
+
+
+        $.get("/api/friends", function (data) {
+            
+        });
+        // Displays a single character, or returns false
+        // app.get("/api/characters/:character", function (req, res) {
+        //     var chosen = req.params.character;
+
+        //     console.log(chosen);
+
+        //     for (var i = 0; i < characters.length; i++) {
+        //         if (chosen === characters[i].routeName) {
+        //             return res.json(characters[i]);
+        //         }
+        //     }
+
+        //     return res.json(false);
+        // });
+    });
+</script>
+
+</html>
