@@ -190,11 +190,11 @@
         <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
         <br>
         <br>
-
+        <a href="/api/friends">Friends API</a>
         <!-- End of master div -->
     </div>
 
-    <div id="bestFriendModal" class="modal fade" role="dialog">
+    <div id="friendModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -211,7 +211,9 @@
             </div>
         </div>
     </div>
+     
     </div>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -254,27 +256,13 @@
                 // $("#myModal").text(data.name);
                 $("#bestFriend").text(data.name);
                 $("#bestFriendPhoto").attr("src", data.photo);
-                $("#bestFriendModal").modal("toggle");
+                $("#friendModal").modal("toggle");
             });
 
 
         $.get("/api/friends", function (data) {
 
         });
-        // Displays a single character, or returns false
-        // app.get("/api/characters/:character", function (req, res) {
-        //     var chosen = req.params.character;
-
-        //     console.log(chosen);
-
-        //     for (var i = 0; i < characters.length; i++) {
-        //         if (chosen === characters[i].routeName) {
-        //             return res.json(characters[i]);
-        //         }
-        //     }
-
-        //     return res.json(false);
-        // });
     });
 </script>
 
