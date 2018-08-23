@@ -44,6 +44,8 @@ module.exports = function (app) {
                 var difference = Math.abs(user.scores[j] - friendData[i].scores[j]);
                 totalDifference += difference;
             }
+
+            // if new minimum, change the best friend index and set the new minimum for next iteration comparisons
             if (totalDifference < minimumDifference) {
                 bestFriendIndex = i;
                 minimumDifference = totalDifference;
@@ -56,7 +58,7 @@ module.exports = function (app) {
         //friendData.push(req.body);
         // res.json(true);
         res.json(friendData[bestFriendIndex]);
-    
+
 
 
     });

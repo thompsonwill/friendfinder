@@ -194,9 +194,24 @@
         <!-- End of master div -->
     </div>
 
-    <p>Your best friend:</p>
-    <h2 id="bestFriend"></h2>
-    <img id="bestFriendPhoto" src="#">
+    <div id="bestFriendModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Your New Best Friend</h1>
+                </div>
+                <div class="modal-body">
+                    <h2 id="bestFriend"></h2>
+                    <img id="bestFriendPhoto" src="#" width=40% height=40%>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -233,18 +248,18 @@
         console.log(newFriend);
         var newFriendScores = newFriend.scores.map(v => parseInt(v, 10));
 
-        $.post("/api/friends", newFriend),
-            function (data) {
-                $("#yourName").text(data.name);
-                $("#yourPic").attr("src", data.photo);
+        var currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", newFriend, function (data) {
                 // $("#myModal").text(data.name);
                 $("#bestFriend").text(data.name);
-				$("#bestFriendPhoto").attr("src", data.photo);
-            };
+                $("#bestFriendPhoto").attr("src", data.photo);
+                $("#bestFriendModal").modal("toggle");
+            });
 
 
         $.get("/api/friends", function (data) {
-            
+
         });
         // Displays a single character, or returns false
         // app.get("/api/characters/:character", function (req, res) {
