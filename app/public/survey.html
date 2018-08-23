@@ -22,12 +22,13 @@
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Friend Finder - The Survey</h1>
-                <p class="lead">Fill out this survey to find someone compatible with you.</p>
-                <br>
-                <p>1 - Strongly Disagree</p>
-                <br>
-                <p>5 - Strongly Agree</p>
+                <center>
+                    <h1 class="display-4">Friend Finder - The Survey</h1>
+                    <p class="lead">Fill out this survey to find someone compatible with you.</p>
+                    <br>
+                    <p>1 - Strongly Disagree</p>
+                    <p>5 - Strongly Agree</p>
+                </center>
             </div>
         </div>
 
@@ -50,11 +51,11 @@
         <p>You prefer going out and being with lots of people over staying in at home.</p>
         <select id="q1">
             <option value="" disabled selected>Select your option</option>
-            <option value="1">1</option>
+            <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly Agree)</option>
         </select>
         <br>
         <br>
@@ -213,23 +214,23 @@
     </div>
 
 
-    
+
     <!-- Error Modal -->
     <div id="errorModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Error</h1>
-                    </div>
-                    <div class="modal-body">
-                        <h3>Please make sure all fields are filled in.</h3>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Error</h1>
+                </div>
+                <div class="modal-body">
+                    <h3>Please make sure all fields are filled in.</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -250,9 +251,9 @@
     $("#submitBtn").on("click", function () {
         event.preventDefault();
 
-    if ($("#q1").val() === null || $("#q2").val() === null || $("#q3").val() === null || $("#q4").val() === null || $("#q5").val() === null || $("#q6").val() === null || $("#q7").val() === null || $("#q8").val() === null || $("#q9").val() === null || $("#q10").val() === null){
-        $("#errorModal").modal("toggle");
-    } else {
+        if ($("#q1").val() === null || $("#q2").val() === null || $("#q3").val() === null || $("#q4").val() === null || $("#q5").val() === null || $("#q6").val() === null || $("#q7").val() === null || $("#q8").val() === null || $("#q9").val() === null || $("#q10").val() === null) {
+            $("#errorModal").modal("toggle");
+        } else {
 
             var newFriend = {
                 name: $("#yourName").val().trim(),
@@ -278,7 +279,6 @@
             var currentURL = window.location.origin;
 
             $.post(currentURL + "/api/friends", newFriend, function (data) {
-                // $("#myModal").text(data.name);
                 $("#bestFriend").text(data.name);
                 $("#bestFriendPhoto").attr("src", data.photo);
                 $("#friendModal").modal("toggle");
