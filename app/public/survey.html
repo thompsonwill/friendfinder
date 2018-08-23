@@ -194,11 +194,11 @@
         <!-- End of master div -->
     </div>
 
+    <!-- Modal to show your new friends -->
     <div id="friendModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title">Your New Best Friend</h1>
                 </div>
                 <div class="modal-body">
@@ -211,9 +211,28 @@
             </div>
         </div>
     </div>
-     
+
+
+    
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Error</h1>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Please make sure all fields are filled in.</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-   
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -230,39 +249,41 @@
 
     $("#submitBtn").on("click", function () {
         event.preventDefault();
-        var newFriend = {
-            name: $("#yourName").val().trim(),
-            photo: $("#yourPic").val().trim(),
-            scores: [
-                $("#q1").val().trim(),
-                $("#q2").val().trim(),
-                $("#q3").val().trim(),
-                $("#q4").val().trim(),
-                $("#q5").val().trim(),
-                $("#q6").val().trim(),
-                $("#q7").val().trim(),
-                $("#q8").val().trim(),
-                $("#q9").val().trim(),
-                $("#q10").val().trim()
-            ]
-        };
 
-        console.log(newFriend);
-        var newFriendScores = newFriend.scores.map(v => parseInt(v, 10));
+    if ($("#q1").val() === null || $("#q2").val() === null || $("#q3").val() === null || $("#q4").val() === null || $("#q5").val() === null || $("#q6").val() === null || $("#q7").val() === null || $("#q8").val() === null || $("#q9").val() === null || $("#q10").val() === null){
+        $("#errorModal").modal("toggle");
+    } else {
 
-        var currentURL = window.location.origin;
+            var newFriend = {
+                name: $("#yourName").val().trim(),
+                photo: $("#yourPic").val().trim(),
+                scores: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim()
+                ]
+            };
 
-        $.post(currentURL + "/api/friends", newFriend, function (data) {
+
+            console.log(newFriend);
+            var newFriendScores = newFriend.scores.map(v => parseInt(v, 10));
+
+            var currentURL = window.location.origin;
+
+            $.post(currentURL + "/api/friends", newFriend, function (data) {
                 // $("#myModal").text(data.name);
                 $("#bestFriend").text(data.name);
                 $("#bestFriendPhoto").attr("src", data.photo);
                 $("#friendModal").modal("toggle");
             });
-
-
-        $.get("/api/friends", function (data) {
-
-        });
+        }
     });
 </script>
 

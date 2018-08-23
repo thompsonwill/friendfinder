@@ -16,7 +16,7 @@ var friendArray = [
         ]
     }, {
         "name": "Brian",
-        "photo": "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "photo": "https://images.unsplash.com/photo-1520975954732-35dd22299614?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4f0f05c24a4b6f445dcebab7594fabe4&auto=format&fit=crop&w=668&q=80",
         "scores": [
             3,
             2,
