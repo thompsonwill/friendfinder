@@ -24,7 +24,7 @@ module.exports = function (app) {
         }
 
         var bestFriendIndex = 0;
-        var minimumDifference = 40;
+        var difference = 40;
 
         for (var i = 0; i < friendData.length; i++) {
             var totalDifference = 0;
@@ -33,9 +33,9 @@ module.exports = function (app) {
                 totalDifference += difference;
             }
 
-            if (totalDifference < minimumDifference) {
+            if (totalDifference < difference) {
                 bestFriendIndex = i;
-                minimumDifference = totalDifference;
+                difference = totalDifference;
             }
         }
 
